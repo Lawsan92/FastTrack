@@ -1,16 +1,16 @@
 import './Navbar.jsx'
 import Navbar from "./Navbar.jsx";
 import {useContext, useState} from "react";
-import {UserContext} from "../App.jsx"
+import { UserContext } from "../contexts/UserContext";
 
 function Login() {
-    const user = useContext(UserContext);
+    const {user, setUser} = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleUser = (e) => {
         e.preventDefault();
-        setUser({...user, [email]: e.target.value, password: password});
+        setUser({'email': email, 'password': password});
     };
 
     return (

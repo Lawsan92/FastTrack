@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from './Components/Home.jsx'
 import Checkout from './Checkout.jsx'
 import Login from "./Components/Login.jsx";
+import {UserProvider} from "./contexts/UserContext.jsx";
 
 export const UserContext = createContext();
 
@@ -18,13 +19,13 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <UserContext.Provider value={{user, setUser}}>
+                <UserProvider>
                     <Routes>
                         <Route path="/" element={<Home/>} />
                         <Route path="/checkout" element={<Checkout/>} />
                         <Route path="/login" element={<Login />} />
                     </Routes>
-                </UserContext.Provider>
+                </UserProvider>
             </BrowserRouter>
         </div>
     );
