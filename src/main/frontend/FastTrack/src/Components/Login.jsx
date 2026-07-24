@@ -6,8 +6,14 @@ function Login() {
         <div className="login">
             <Navbar/>
             <h1>Login page</h1>
-            <form>
-
+            <form className="login-form">
+                <div className="form-group">
+                    <input type="email" placeholder="Email" />
+                </div>
+                <div className="form-group">
+                    <input type="password" placeholder="Password" />
+                </div>
+                <button type="submit" className="btn btn-primary">Login</button>
             </form>
         </div>
     );
